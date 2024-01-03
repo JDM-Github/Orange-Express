@@ -7,6 +7,8 @@
 	--shadow-color  : black;
 	--shadow-color2 : #00000088;
 
+	--gradient-color: linear-gradient(to bottom, var(--main-color), orange);
+
 	--white-ff  : #FFFFFFFF;
 	--white-fe  : #FEFEFEFF;
 	--black-66  : #00000066;
