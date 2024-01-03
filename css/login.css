@@ -10,7 +10,7 @@
 /* THE RECTANGLE */
 .screen1 .rectangle {
 	position  : relative;
-	top       : 80px;
+	top       : 50px;
 	width     : 100%;
 	height    : auto;
 	min-height: 600px;
@@ -137,7 +137,7 @@
 /*                            MEDIA EDIT                           */
 /*******************************************************************/
 @media (max-width: 1200px) {
-	.screen1 .rectangle      { min-height: 520px; max-height: 520px; }
+	.screen1 .rectangle      { min-height: 500px; max-height: 500px; }
 	.screen1 .main-rectangle { min-height: 320px; max-height: 320px; }
 	.screen1 .members        { font-size: 1.5rem; }
 }
@@ -155,7 +155,7 @@
 	.screen1 .main-rectangle { min-height: 260px; max-height: 260px; }
 }
 @media (max-width: 800px) {
-	.screen1 .rectangle      { min-height: 380px; max-height: 380px; }
+	.screen1 .rectangle      { top: 30px; min-height: 360px; max-height: 360px; }
 	.screen1 .main-rectangle { min-height: 200px; max-height: 200px; right: 25px; }
 	.screen1 .members        { font-size: 1.2rem; }
 }
