@@ -1,0 +1,81 @@
+/*******************************************************************/
+/*                       THE CART CONTENT CSS                      */
+/*******************************************************************/
+.cart-content {
+	position  : relative;
+	top       : 100px;
+	width     : 100vw;
+	height    : auto;
+	min-height: 550px;
+
+	margin-bottom   : -20px;
+	background-color: var(--hbackground);
+}
+.cart-content .bg-img {
+	position: absolute;
+	top     : 0;
+	left    : -10%;
+	width   : 80%;
+	height  : 100%;
+}
+.cart-content .cut-img {
+	position: absolute;
+	top     : 0;
+	left    : 10vw;
+
+	border-left  : 60vw solid transparent;
+	border-bottom: 100vh solid var(--hbackground);
+}
+/*.................................................................*/
+
+
+
+
+/*******************************************************************/
+/*                           THE CHECKOUT                          */
+/*******************************************************************/
+.checkout {
+	position: fixed;
+	bottom  : 20px;
+	right   : 20px;
+	width   : 200px;
+	height  : 50px;
+
+	color      : white;
+	font-weight: bold;
+	font-size  : 1.5rem;
+
+	border-radius   : 20px;
+	background-color: var(--main-color);
+}
+/*.................................................................*/
+
+
+
+
+/*******************************************************************/
+/*                            CARTED ITEMS                         */
+/*******************************************************************/
+.carted-items {
+	display   : grid;
+	overflow-y: scroll;
+	row-gap   : 20px;
+	grid-template-rows   : repeat(5, 1fr);
+	grid-template-columns: repeat(1, 1fr);
+
+	position: absolute;
+	top     : 2%;
+	right   : 20px;
+	width   : 50%;
+	height  : 96%;
+}
+.carted-items .cart-product {
+	height      : 150px;
+	margin-right: 10px;
+
+	border-radius   : 10px;
+	border          : 1px solid #00000066;
+	background-color: #fefefe;
+}
+/*.................................................................*/
+

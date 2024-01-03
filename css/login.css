@@ -1,0 +1,179 @@
+/*******************************************************************/
+/*                           THE LOGIN CSS                         */
+/*******************************************************************/
+.screen1 {
+	position     : relative;
+	width        : 100vw;
+	height       : auto;
+	border-bottom: 10px solid white;
+}
+/* THE RECTANGLE */
+.screen1 .rectangle {
+	position  : relative;
+	top       : 80px;
+	width     : 100%;
+	height    : auto;
+	min-height: 600px;
+	max-height: 600px;
+	background: var(--gradient-color);
+	background-attachment: fixed;
+}
+/* THE LOGO IN LOGIN SCREEN */
+.screen1 .logo {
+	position: absolute;
+	top     : 80px;
+	left    : 80px;
+	width   : 50vw;
+}
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                         THE MAIN RECTANGLE                      */
+/*******************************************************************/
+.screen1 .main-rectangle {
+	position  : absolute;
+	width     : 30%;
+	top       : 50px;
+	right     : 50px;
+	min-height: 400px;
+	max-height: 400px;
+
+	border-radius   : 20px;
+	background-color: white;
+	box-shadow      : 0 0 10px #00000099;
+}
+.screen1 .main-rectangle .signup-class {
+	position: absolute;
+	width   : 100%;
+	height  : 100%;
+}
+.screen1 .main-rectangle .signup-class .signup {
+	position : absolute;
+	top      : 5%;
+	left     : 5%;
+	font-size: 1.3rem;
+}
+.screen1 .main-rectangle .signup-class .email,
+.screen1 .main-rectangle .signup-class .pass {
+	position: absolute;
+	top     : 18%;
+	left    : 8%;
+	width   : 84%;
+	height  : 8%;
+
+	border          : 1px solid #00000022;
+	text-indent     : 2%;
+	font-size       : 1rem;
+	background-color: white;
+}
+.screen1 .main-rectangle .signup-class .pass { top  : 30%; }
+.screen1 .main-rectangle .signup-class .next {
+	position: absolute;
+	top     : 45%;
+	left    : calc(8% + 2px);
+	width   : 84%;
+	height  : 8%;
+
+	border          : none;
+	color           : white;
+	font-size       : 1rem;
+	font-weight     : bold;
+	background-color: var(--main-color);
+
+	cursor: pointer;
+}
+.screen1 .main-rectangle .signup-class .or-class-line {
+	position: absolute;
+	top     : 59%;
+	left    : calc(8% + 2px);
+	width   : 84%;
+	height  : 8%;
+
+	border-top: 1px solid var(--black-66);
+}
+.screen1 .main-rectangle .signup-class .or-class {
+	position: absolute;
+	top     : 55%;
+	left    : calc(40% + 2px);
+	width   : 20%;
+	height  : 8%;
+
+	color           : var(--black-66);
+	font-size       : 0.8rem;
+	font-weight     : bold;
+	background-color: white;
+}
+.screen1 .main-rectangle .signup-class .alternative {
+	display: grid;
+	column-gap: 5%;
+	grid-template-columns: repeat(2, 1fr);
+
+	position: absolute;
+	top     : 68%;
+	left    : calc(8% + 2px);
+	width   : 84%;
+	height  : 8%;
+}
+.screen1 .main-rectangle .signup-class .alternative div     { border: 1px solid var(--black-66); font-size: 0.8rem; }
+.screen1 .main-rectangle .signup-class .alternative div img { width: 15%; padding-right: 10px; }
+.screen1 .main-rectangle .signup-class .terms {
+	position: absolute;
+	top     : 80%;
+	left    : calc(8% + 2px);
+	width   : 84%;
+	height  : 8%;
+
+	color     : var(--black-66);
+	font-size : 0.8rem;
+	text-align: center;
+}
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                            MEDIA EDIT                           */
+/*******************************************************************/
+@media (max-width: 1200px) {
+	.screen1 .rectangle      { min-height: 520px; max-height: 520px; }
+	.screen1 .main-rectangle { min-height: 320px; max-height: 320px; }
+	.screen1 .members        { font-size: 1.5rem; }
+}
+@media (max-width: 1000px) {
+	.screen1 .main-rectangle .signup-class .signup          { font-size: 1.2rem; }
+	.screen1 .main-rectangle .signup-class .email,
+	.screen1 .main-rectangle .signup-class .pass,
+	.screen1 .main-rectangle .signup-class .next            { font-size: 0.8rem; }
+
+	.screen1 .main-rectangle .signup-class .or-class,
+	.screen1 .main-rectangle .signup-class .terms           { font-size: 0.5rem; }
+	.screen1 .main-rectangle .signup-class .alternative div { font-size: 0.6rem; }
+
+	.screen1 .rectangle      { min-height: 440px; max-height: 440px; }
+	.screen1 .main-rectangle { min-height: 260px; max-height: 260px; }
+}
+@media (max-width: 800px) {
+	.screen1 .rectangle      { min-height: 380px; max-height: 380px; }
+	.screen1 .main-rectangle { min-height: 200px; max-height: 200px; right: 25px; }
+	.screen1 .members        { font-size: 1.2rem; }
+}
+@media (max-width: 650px) {
+	.screen1 .rectangle { min-height: 450px; max-height: 450px; }
+	.screen1 .main-rectangle {
+		min-height: 280px;
+		max-height: 280px;
+		width     : 50%;
+		left      : 50%;
+		transform : translateX(-50%);
+	}
+	.screen1 .logo, .screen1 .members { display: none; }
+}
+
+@media (max-width: 500px) {
+	.screen1 .rectangle      { min-height: 350px; max-height: 350px; }
+	.screen1 .main-rectangle { min-height: 200px; max-height: 200px; }
+}
+/*.................................................................*/
+

@@ -1,0 +1,37 @@
+
+/*  ADD THE VARIABLE  */
+:root {
+	--main-color    : #ED7D31;
+	--background    : #dddddf;
+	--hbackground   : #FEFEFF;
+	--shadow-color  : black;
+	--shadow-color2 : #00000088;
+
+	--white-ff  : #FFFFFFFF;
+	--white-fe  : #FEFEFEFF;
+	--black-66  : #00000066;
+	--black-88  : #00000088;
+
+	--pref-border-radius: 10px;
+}
+
+/*  MODIFY THE SCROLLBAR  */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track {
+	border-radius    : 10px;
+	margin-top       : 5px;
+	margin-bottom    : 5px;
+	background-color : var(--black-88); 
+}
+::-webkit-scrollbar-thumb {
+	border-radius    : 10px;
+	border           : 1px solid var(--black-88);
+	background-color : var(--white-ff);
+}
+
+/*  CLASS USED TO CENTER A DIV TEXT CONTENT  */
+.center-text { display: flex; align-items: center; justify-content: center; }
+
+*     { font-family: "Arial"; transition: 0.2s all; }
+body  { margin: 0; padding: 0; height: auto; overflow-x: hidden; }
+button, input { outline: none; border: none; }

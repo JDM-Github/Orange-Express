@@ -1,0 +1,188 @@
+/*******************************************************************/
+/*                       THE MAIN CONTENT CSS                      */
+/*******************************************************************/
+.content {
+	position: relative;
+	width   : 100vw;
+	height  : auto;
+	background-color: var(--background);
+}
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                           THE PRODUCTS                          */
+/*******************************************************************/
+.content .products {
+	display   : grid;
+	column-gap: 10px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+
+	grid-template-columns: repeat(8, 1fr);
+	
+	position: relative;
+	left    : 5px;
+	width   : calc(100% - 10px);
+	height  : 250px;
+
+	padding-bottom: 5px;
+	padding-top   : 2px;
+	cursor        : pointer;
+}
+.content .products .product {
+	position   : relative;
+	width      : 200px;
+	height     : 250px;
+}
+.content .products .product img {
+	position: absolute;
+	width   : 100%;
+	height  : 70%;
+}
+.content .products .product .product-name {
+	position: absolute;
+	top     : 72%;
+	left    : 5%;
+	width   : 90%;
+	height  : 20%;
+
+	color        : #333333;
+	text-overflow: ellipsis;
+	white-space  : nowrap;
+	overflow     : hidden;
+	font-size    : 0.9rem;
+}
+.content .products .product .product-price {
+	position: absolute;
+	top     : 90%;
+	left    : 5%;	
+	width   : 90%;
+	height  : 10%;
+
+	color        : #ff6600;
+	font-weight  : bold;
+	text-overflow: ellipsis;
+	white-space  : nowrap;
+	overflow     : hidden;
+	font-size    : 1.1rem;
+}
+.content .products .product .product-sales {
+	position: absolute;
+	width   : 100%;
+	height  : 20%;
+	bottom  : 0;
+
+	color           : white;
+	font-weight     : bold;
+	background-color: #00000033;
+}
+.content .pdiscover .product {
+	position: relative;
+	width   : 200px;
+	height  : 250px;
+
+	border          : 2px solid transparent;
+	box-shadow      : 0 0 2px #00000099;
+	background      : none;
+	background-color: white;
+}
+.content .pdiscover .product:hover { border: 2px solid orange; transform: translateY(-2px); }
+/*.................................................................*/
+
+
+
+
+/*******************************************************************/
+/*                           THE TOP PRODUCT                       */
+/*******************************************************************/
+.content .top-product {
+	position   : relative;
+	width      : 90%;
+	height     : 300px;
+	left       : 5%;
+	top        : 20px;
+	background-color: var(--hbackground);
+}
+.content .top-product .product img {
+	position: absolute;
+	width   : 100%;
+	height  : 100%;
+}
+
+.content .top-product .top-product-div {
+	padding      : 15px;
+	font-size    : 0.9rem;
+	font-weight  : bold;
+	color        : var(--main-color);
+	border-bottom: 3px solid var(--background);
+}
+/*.................................................................*/
+
+
+
+
+/*******************************************************************/
+/*                          DAILY DISCOVER                         */
+/*******************************************************************/
+.content .daily-discover {
+	position   : relative;
+	width      : 90%;
+	height     : auto;
+	left       : 5%;
+	top        : 20px;
+	margin-top : 20px;
+	padding-bottom: 50px;
+	background-color: var(--background);
+}
+
+.content .daily-discover .daily-discover-div {
+	position: relative;
+	padding    : 15px;
+	font-size  : 1.1rem;
+	font-weight: bold;
+	text-align : center;
+	color      : var(--main-color);
+
+	background-color: var(--hbackground);
+	border-bottom   : 3px solid var(--main-color);
+}
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                            MEDIA EDIT                           */
+/*******************************************************************/
+@media (max-width: 800px) {
+	.content .products .product .product-name { font-size: 0.8rem }
+	.content .products .product .product-price { font-size: 0.9rem }
+	.content .products { height: 185px; }
+	.content .top-product { height : 230px; }
+	.content .products .product { height: 180px; width : 150px; }
+	.content .products .product .product-sales { font-size: 0.8rem; }
+	.content .top-product .top-product-div { font-size: 0.8rem; }
+	.content .daily-discover .daily-discover-div { font-size: 0.9rem; }
+}
+
+@media (max-width: 550px) {
+	.content .products .product .product-name { font-size: 0.7rem }
+	.content .products .product .product-price { font-size: 0.7rem }
+	.content .products { height: 155px; }
+	.content .top-product { height : 200px; }
+	.content .products .product { height: 150px; width : 120px; }
+	.content .products .product .product-sales { font-size: 0.7rem; }
+	.content .top-product .top-product-div { font-size: 0.7rem; }
+	.content .daily-discover .daily-discover-div { font-size: 0.8rem; }
+}
+
+@media (max-width: 450px) {
+	.content .products { height: 105px; }
+	.content .top-product { height : 150px; }
+	.content .products .product { height: 100px; width : 80px; }
+	.content .products .product .product-sales { font-size: 0.5rem; }
+	.content .top-product .top-product-div { font-size: 0.5rem; }
+	.content .daily-discover .daily-discover-div { font-size: 0.6rem; }
+}
+/*.................................................................*/

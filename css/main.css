@@ -1,0 +1,222 @@
+/*******************************************************************/
+/*                            THE MAIN CSS                         */
+/*******************************************************************/
+
+.special {
+	margin-top: 100px;
+	position: relative;
+	width: 100vw;
+	height: 380px;
+	background: url("../assets/topContent.png") center/100% 100% no-repeat;
+	border-bottom: 2px solid white;
+	padding-bottom: 20px;
+}
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                             THE ADS CSS                         */
+/*******************************************************************/
+.special .special-big-ads {
+	position: absolute;
+	width   : 55%;
+	height  : 70%;
+	left    : calc(5% - 4px);
+	top     : calc(8% - 4px);
+	cursor  : pointer;
+	border  : 2px solid transparent;
+
+	box-shadow   : 0 0 5px var(--shadow-color2);
+	overflow-x   : hidden;
+	border-radius: 2px;
+}
+.special .special-big-ads:hover { border: 2px solid orange; box-shadow: 0 0 10px orange; }
+.special .special-big-ads img {
+	position: absolute;
+	width   : 100%;
+	height  : 100%;
+
+	/* USE AN ANIMATION TO CONSTANTLY MOVE THE IMAGE, LIKE SHOWCASING IT */
+	animation: translateAnimation 20s linear infinite;
+}
+.special .promo-container {
+	position: absolute;
+	width   : 34%;
+	height  : 70%;
+	left    : calc(61% - 4px);
+	top     : calc(8% - 4px);
+	cursor  : pointer;
+}
+.special .promo-container div {
+	position: relative;
+	height  : 48%;
+
+	border-radius: 2px;
+	margin-bottom: 2%;
+	border       : 2px solid transparent;
+	box-shadow   : 0 0 5px var(--shadow-color2);
+	background   : url("https://d1csarkz8obe9u.cloudfront.net/posterpreviews/fashion-sale-landscape-poster-template-eb79d26528d13abb43e89e728df1bca9_screen.jpg?ts=1561427984")
+		center/100% 100% no-repeat;
+}
+.special .promo-container :last-child {
+	/* EDIT THE LAST CHILD BACKGROUND */ 
+	background: url("https://d1csarkz8obe9u.cloudfront.net/posterpreviews/clothing-store-banner-design-template-e7332aaf6402c88cb4623bf8eb6f97e2_screen.jpg?ts=1620867237")
+		center/100% 100% no-repeat;
+}
+.special .promo-container div:hover { border: 2px solid orange; box-shadow: 0 0 10px orange; }
+/*.................................................................*/
+
+
+
+
+/*******************************************************************/
+/*                           THE SPECIAL CSS                       */
+/*******************************************************************/
+.special .special-grid {
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	overflow-x     : auto;
+	overflow-y     : hidden;
+
+	position      : relative;
+	width         : 80%;
+	height        : 20%;
+	left          : 10%;
+	top           : calc(80% + 12px);
+	padding-top   : 2px;
+	padding-bottom: 2px;
+}
+.special .special-grid div a {
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+
+	position: relative;
+
+	color          : var(--shadow-color2);
+	font-size      : 0.6rem;
+	font-weight    : bold;
+	text-decoration: none;
+	flex-direction : column;
+
+}
+.special .special-grid img {
+	position    : relative;
+	width       : 50px;
+	height      : 50px;
+	margin-left : 22px;
+	margin-right: 22px;
+	min-width   : 50px;
+	min-height  : 50px;
+
+	border-radius   : 20px;
+	box-shadow      : 0 0 2px var(--shadow-color2);
+	background-color: white;
+	cursor          : pointer;
+}
+.special .special-grid img:hover { box-shadow: 0 0 5px #00000088; transform: translateY(-5px); transition : transform 0.2s ease-in-out; }
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                             THE CREDIT                          */
+/*******************************************************************/
+.credit {
+	overflow  : hidden;
+	position  : relative;
+	width     : 100vw;
+	height    : auto;
+	min-height: 300px;
+
+	background-color: var(--hbackground);
+	border-top      : 5px solid var(--main-color);
+}
+
+.credit .credit-text {
+	position : relative;	
+	top      : 10px;
+	margin   : 50px 8% 50px 8%;
+	color    : #00000088;
+	font-size: 0.9rem;
+}
+.credit .credit-text .highlight {
+	display       : block;
+	margin-bottom : 10px;
+	font-size     : 1.3rem;
+	font-weight   : bold;
+}
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                            MEDIA EDIT                           */
+/*******************************************************************/
+@media (max-width: 1050px) {
+	.special .special-grid { justify-content: left; }
+}
+@media (max-width: 800px) {
+	.special                  { margin-top: 80px; }
+	.special .special-big-ads { width: 90% }
+	.special .promo-container { display: none }
+}
+@media (max-width: 550px) {
+	.special { height: 350px; margin-top: 28px; }
+	.special .special-big-ads {
+		left         : 0;
+		height       : 175px;
+		width        : 100vw;
+		box-shadow   : none;
+		border-bottom: 2px solid black;
+	}
+	.special .special-grid {
+		display   : grid;
+		row-gap   : 10px;
+		column-gap: 10px;
+
+		grid-template-rows   : repeat(2, 1fr);
+		grid-template-columns: repeat(5, 1fr);
+
+		overflow-x: hidden;
+		position  : absolute;
+		top       : 220px;
+		left      : 5%;
+		height    : 130px;
+		width     : 90vw;
+	}
+
+	.special .special-grid div {
+		position     : relative;
+		text-overflow: ellipsis;
+		text-align   : center;
+		white-space  : nowrap;
+		overflow     : hidden;
+	}
+	.special .special-grid img {
+		min-width   : 60%;
+		min-height  : 60%;
+		width       : 60%;
+		height      : 60%;
+	}
+	.special .special-grid img:hover { transform: none; transition : none; }
+	.credit .credit-text .highlight  { font-size: 0.9rem; }
+	.credit .credit-text             { margin-top: 20px; }
+}
+/*.................................................................*/
+
+
+
+/*******************************************************************/
+/*                          KEY ANIMATION                          */
+/*******************************************************************/
+@keyframes translateAnimation {
+	 0%,  25% { transform: translateX(  0%); }
+	26%,  50% { transform: translateX(100%); }
+	51%,  75% { transform: translateX(200%); }
+	76%, 100% { transform: translateX(  0%); }
+}
+/*.................................................................*/
+
