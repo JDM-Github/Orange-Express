@@ -5,7 +5,7 @@
 .nav {
 	z-index: 1; /* USED INDEX 1, TO MAKE THE NAVIGATION ALWAYS ON TOP */
 
-	position: fixed;
+	position: fixed; 
 	top     : 0px;
 	left    : 0px;
 	width   : 100vw;

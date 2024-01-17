@@ -13,7 +13,7 @@
 	<title>Orange Express</title>
 </head>
 
-<body>
+<body theme="neon">
 	<div class="nav">
 		<a href="index.html"><img class="logo" src="assets/logo.png" alt="ORANGE EXPRESS"></a>
 		<div class="search-container">
@@ -25,6 +25,7 @@
 	</div>
 	<div class="special">
 		<div class="special-big-ads">
+
 			<img src="https://assets-static.invideo.io/images/origin/Fashion_Ad_c7b51b5395.JPG">
 			<img style="left: -100%" src="https://miro.medium.com/v2/resize:fit:2000/1*z9tBy-x-AxWFykgoIiDywQ.png">
 			<img style="left: -200%" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/natural-beauty-makeup-thumbnail-ads-design-template-a9e002fb66d817df2b570f12f988b782_screen.jpg?ts=1647332400">
@@ -43,7 +44,7 @@
 			<div><a target="_blank" href="supermarket.html"><img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/shopping_cart.png">Supermarket</a></div>
 			<div><a target="_blank" href="gzone.html"><img src="https://cdn-icons-png.flaticon.com/512/5234/5234658.png">Gadget Zone</a></div>
 			<div><a target="_blank" href="cart.html"><img src="https://icons.veryicon.com/png/o/miscellaneous/basic-monochrome-icon/return-88.png">Change of Mind</a></div>
-			<div><a target="_blank" href="partner.html"><img src="https://cdn-icons-png.flaticon.com/512/6963/6963703.png">Partner Promos</a></div>
+			<div><a target="_blank" href="credits.html"><img src="https://alternawork.com/wp-content/uploads/2018/11/members-icon.png">Members</a></div>
 		</div>
 	</div>
 
@@ -85,6 +86,16 @@
 					<img class="top-product-img" src="https://down-ph.img.susercontent.com/file/56d9a865ddc6c33af1640fe75a540785">
 					<img class="top-product-img" src="assets/topProduct.png">
 					<div class="product-sales center-text">Monthly Sales 8k+ </div>
+				</div>
+				<div class="product">
+					<img class="top-product-img" src="https://down-ph.img.susercontent.com/file/287926c0eb03505baf636e6a6dea1f00">
+					<img class="top-product-img" src="assets/topProduct.png">
+					<div class="product-sales center-text">Monthly Sales 9k+ </div>
+				</div>
+				<div class="product">
+					<img class="top-product-img" src="https://down-ph.img.susercontent.com/file/287926c0eb03505baf636e6a6dea1f00">
+					<img class="top-product-img" src="assets/topProduct.png">
+					<div class="product-sales center-text">Monthly Sales 9k+ </div>
 				</div>
 				<div class="product">
 					<img class="top-product-img" src="https://down-ph.img.susercontent.com/file/287926c0eb03505baf636e6a6dea1f00">
@@ -303,48 +314,12 @@
 			<div style="position: relative; height: 20px; left: 0; "></div>
 
 			<img class="main-return" src="https://cdn-icons-png.flaticon.com/512/3964/3964488.png"
-				style="position: fixed; top: 10px; left: 10px; width: 50px; height: 50px; cursor: pointer;">
+				style="position: fixed; top: 10px; left: 10px; width: 5%; cursor: pointer;">
 		</div>
 	</div>
 </body>
 <footer>
-	<script type="text/javascript">
-		const quantityInput     = document.querySelector('.open-product .main-store-container .quantity-input');
-		const openProduct       = document.querySelector(".open-product");
-		const mainBox           = document.querySelector(".open-product .main-box");
-		const backgroundProduct = document.querySelector(".open-product .background");
-		const allProduct        = document.querySelectorAll(".pdiscover .product");
-
-		function backProductView() {
-			document.body.style.overflowY = "auto";
-			openProduct.style.zIndex      = "-1";
-			openProduct.querySelector(".main-box")  .style.transform       = "translateX(-50%) translateY(100vh)";
-			backgroundProduct.style.display         = "none";
-			backgroundProduct.style.backgroundColor = "#00000000";
-		}
-
-		backgroundProduct.addEventListener("click", backProductView);
-		mainBox.querySelector(".main-return").addEventListener("click", backProductView);
-
-		allProduct.forEach(e => {
-			e.addEventListener("click", async () => {
-				document.body.style.overflowY = "hidden";
-				quantityInput.value           = "1";
-				openProduct.style.zIndex      = "2";
-				openProduct.querySelector(".main-box")  .style.transform       = "translateX(-50%) translateY(0)";
-				backgroundProduct.style.display         = "inline-block";
-				backgroundProduct.style.backgroundColor = "#000000cc";
-
-				const productName = e.querySelector('.product-name').textContent;
-				const productPrice = e.querySelector('.product-price').textContent;
-				const imgSrc = e.querySelector('img').getAttribute('src');
-
-				mainBox.querySelector(".main-image").setAttribute("src", imgSrc);
-				mainBox.querySelector(".main-name" ).textContent = productName;
-				mainBox.querySelector(".main-price-container .price").textContent = productPrice;
-			});
-		});
-	</script>
+	<script type="text/javascript" src="js/product.js"></script>
 </footer>
 
 </html>

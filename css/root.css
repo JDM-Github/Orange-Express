@@ -1,8 +1,33 @@
+@font-face {
+	font-family : 'False';
+	src         : url('../assets/fonts/False.ttf') format('truetype');
+}
+@font-face {
+	font-family : 'Vampire';
+	src         : url('../assets/fonts/VampireWars.ttf') format('truetype');
+}
+@font-face {
+	font-family : 'Nexa';
+	src         : url('../assets/fonts/Nexa-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+	font-family : 'NexaHard';
+	src         : url('../assets/fonts/Nexa-Heavy.ttf') format('truetype');
+}
+@font-face {
+	font-family : 'Sacred';
+	src         : url('../assets/fonts/Sacred Hertz.otf') format('opentype');
+}
+@font-face {
+	font-family : 'SacredStraight';
+	src         : url('../assets/fonts/Sacred Hertz Straight.otf') format('opentype');
+}
+
 
 /*  ADD THE VARIABLE  */
 :root {
 	--main-color    : #ED7D31;
-	--background    : #dddddf;
+	--background    : #cccccc;
 	--hbackground   : #FEFEFF;
 	--shadow-color  : black;
 	--shadow-color2 : #00000088;
@@ -15,6 +40,15 @@
 	--black-88  : #00000088;
 
 	--pref-border-radius: 10px;
+}
+
+#particles {
+    position : fixed;
+    top      : 0;
+    left     : 0;
+    width    : 70%;
+    height   : 100%;
+    z-index  : -1;
 }
 
 /*  MODIFY THE SCROLLBAR  */
@@ -37,3 +71,50 @@
 *     { font-family: "Arial"; transition: 0.2s all; }
 body  { margin: 0; padding: 0; height: auto; overflow-x: hidden; }
 button, input { outline: none; border: none; }
+
+
+@keyframes colorAnimation {
+	0%   { filter: drop-shadow(0 0 10px rgb(0, 123, 255, 0.8)); }
+	25%  { filter: drop-shadow(0 0 20px rgb(50, 128, 255, 1)); }
+	50%  { filter: drop-shadow(0 0 10px rgb(105, 167, 248, 0.8)); }
+	75%  { filter: drop-shadow(0 0 20px rgb(89, 149, 245, 1)); }
+	100% { filter: drop-shadow(0 0 10px rgb(0, 123, 255, 0.8)); }
+}
+@keyframes colorAnimation2 {
+	0%   { filter: drop-shadow(0 0 10px rgb(0, 123, 255, 0.8)); }
+	25%  { filter: drop-shadow(0 0 10px rgb(50, 128, 255, 1)); }
+	50%  { filter: drop-shadow(0 0 10px rgb(105, 167, 248, 0.8)); }
+	75%  { filter: drop-shadow(0 0 10px rgb(89, 149, 245, 1)); }
+	100% { filter: drop-shadow(0 0 10px rgb(0, 123, 255, 0.8)); }
+}
+
+@keyframes colorAnimation3 {
+	0%   {
+		border-color: rgb(0, 123, 255);
+		box-shadow: 0 0 10px 5px rgb(0, 123, 255, 0.3);
+	}
+	25%  {
+		border-color: rgb(50, 128, 255);
+		box-shadow: 0 0 20px 5px rgb(50, 128, 255, 0.5);
+	}
+	50%  {
+		border-color: rgb(105, 167, 248);
+		box-shadow: 0 0 10px 5px rgb(105, 167, 248, 0.3);
+	}
+	75%  {
+		border-color: rgb(89, 149, 245);
+		box-shadow: 0 0 20px 5px rgb(89, 149, 245, 0.5);
+	}
+	100%   {
+		border-color: rgb(0, 123, 255);
+		box-shadow: 0 0 10px 5px rgb(0, 123, 255, 0.3);
+	}
+}
+
+@keyframes textAnimation {
+	0%   { color: rgb(0, 123, 255); }
+	25%  { color: rgb(50, 128, 255); }
+	50%  { color: rgb(112, 171, 247); }
+	75%  { color: rgb(89, 149, 245); }
+	100% { color: rgb(0, 123, 255); }
+}

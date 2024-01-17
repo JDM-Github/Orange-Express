@@ -1,0 +1,31 @@
+body {
+	overflow  : hidden;
+	position  : absolute;
+	top       : 0;
+	left      : 0;
+	width     : 100vw;
+	height    : 100vh;
+	background: url("https://img.freepik.com/premium-vector/abstract-futuristic-background-blue-technology-sci-fi-frame-hud-ui-topic-lower-third-button-bar_35887-1039.jpg") center/100% 100%;
+	background-attachment: fixed;
+}
+
+.head {
+	position: absolute;
+	width   : 250px;
+	height  : 150px;
+
+	background-color: #465779;
+	border          : 2px solid white;
+	transition      : transform 0.2s;
+	animation       : colorAnimation3 2s infinite alternate,
+					  textAnimation 5s infinite;
+	background-size : 100% 100%;
+	background-position: center;	
+}
+.head div {
+	position   : absolute;
+	top        : -25px;
+	font-size  : 1.2rem;
+	text-align : center;
+	font-family: 'Vampire';
+}

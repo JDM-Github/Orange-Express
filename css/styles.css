@@ -1,0 +1,115 @@
+.style-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 110vh;
+	background: url("https://image.slidesdocs.com/responsive-images/background/4-pink-curtains-open-in-the-room-with-windows-powerpoint-background_6973c82272__960_540.jpg")
+		center/100% 100%;
+}
+
+.model {
+	position: relative;
+	top   : 18vh;
+	left  : 5vw;
+	width : 30vw;
+	height: 80vh;
+	border: 2px solid white;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.model img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	animation: translateAnimation 15s linear infinite;
+}
+
+.product-dress {
+	position: absolute;
+	top   : 18vh;
+	left  : 40vw;
+	width : 55vw;
+	height: 80vh;
+	border-radius: 20px;
+	background-color: #ab4180;
+
+	background: linear-gradient(to top, #9b3170, #ab4180, #FF6CC5);
+	border: 2px solid white;
+	box-shadow: 0 0 20px black;
+}
+
+.product-dress .shop-product {
+	position: relative;
+	display: grid;
+	height: 90%;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows   : repeat(3, 1fr);
+	padding-left : 20px;
+	padding-right: 20px;
+	column-gap   : 10px;
+	row-gap      : 10px;
+	overflow-y   : auto;
+}
+
+.product-dress .shop-product .shop-cat {
+	border-radius: 20px;
+	overflow     : hidden;
+	cursor       : pointer;
+	height       : 180px;
+}
+
+.product-dress .shop-by-cat {
+	font-size: 2rem; font-family: 'NexaHard'; text-indent: 20px; color: white;
+}
+.product-dress .shop-product .shop-cat .shop-text {
+	position: relative;
+	width: 100%;
+	height: 20%;
+
+	font-size: 1.2rem;
+	font-family: 'NexaHard';
+	text-align: center;
+	color: white;
+	background-color: #FF6CC5;
+}
+
+.product-dress .shop-product .shop-cat .shop-img {
+	position: relative;
+	width: 100%;
+	height: 80%;
+	background-color: white;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+.product-dress .shop-product .shop-cat .shop-img:hover { transform: scale(1.1); }
+
+
+@media (max-width: 1000px) {
+	.product-dress .shop-product .shop-cat { height: 130px; }
+}
+@media (max-width: 900px) {
+	.model { display: none; }
+	.product-dress { left: 5vw; width: 90vw; }
+	.product-dress .shop-product .shop-cat .shop-text { font-size: 1rem; }
+	.product-dress .shop-product .shop-cat { height: 150px; }
+}
+
+@media (max-width: 550px) {
+	.product-dress { top: 80px; }
+	.product-dress .shop-product {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows   : repeat(4, 1fr);
+		overflow-y: scroll;
+	}
+	.product-dress .shop-product .shop-cat { height: 180px; }
+	.product-dress .shop-by-cat { font-size: 1.5rem; }
+	.product-dress .shop-product .shop-cat .shop-img {
+		height: 80%;
+	}
+	.product-dress .shop-product .shop-cat .shop-text {
+		height: 20%;
+	}
+}

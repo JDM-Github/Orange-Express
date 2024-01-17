@@ -1,0 +1,34 @@
+body { background-color: black; overflow-y: hidden; }
+
+/*.user-information { position: fixed; }*/
+.user-information .rectangle {
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    width           : 30vw;
+    height          : 100vh;
+
+    border-left: 20vw solid transparent;
+    border-top : 100vh solid #000011fe;
+    animation: colorAnimation 5s infinite;
+}
+.user-information img {
+    z-index: 1;
+    position: absolute;
+    width: 800px;
+/*    height: 100%;*/
+    top: 15%;
+    right: -5%;
+    animation: colorAnimation2 5s infinite;
+
+}
+
+.gzonetext {
+    font-family: 'Vampire';
+    position: absolute;
+    top: 0;
+    right: 20px;
+    color: white;
+    font-size: 5rem;
+    animation: textAnimation 5s infinite;
+}
