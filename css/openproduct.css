@@ -120,7 +120,8 @@
 /*.................................................................*/
 
 
-.open-product .main-box .main-price-container {
+.open-product .main-box .main-price-container,
+.open-product .main-box .main-real-price-container {
 	position: relative;
 	left    : 2%;
 	width   : 96%;

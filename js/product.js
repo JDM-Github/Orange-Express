@@ -49,8 +49,11 @@ function addAllProductListener() {
 			backgroundProduct.style.backgroundColor = "#000000cc";
 
 			const productName  = e.querySelector('.product-name').textContent;
-			const productPrice = (e.querySelector('.product-real-price') != null) ?
-				e.querySelector('.product-real-price').textContent : e.querySelector('.product-price').textContent;
+			if (e.querySelector('.product-real-price') != null) {
+				mainBox.querySelector(".main-price-container .real-price").textContent =
+					e.querySelector('.product-real-price').textContent;
+			}
+			const productPrice = e.querySelector('.product-price').childNodes[0].textContent;
 			const imgSrc       = e.querySelector('img').getAttribute('src');
 
 			mainBox.querySelector(".main-image").setAttribute("src", imgSrc);
