@@ -178,7 +178,7 @@
 		column-gap: 10px;
 
 		grid-template-rows   : repeat(2, 1fr);
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 
 		overflow-x: hidden;
 		position  : absolute;
@@ -196,10 +196,10 @@
 		overflow     : hidden;
 	}
 	.special .special-grid img {
-		min-width   : 60%;
-		min-height  : 60%;
-		width       : 60%;
-		height      : 60%;
+		min-width   : 40%;
+		min-height  : 40%;
+		width       : 40%;
+		height      : 40%;
 	}
 	.special .special-grid img:hover { transform: none; transition : none; }
 	.credit .credit-text .highlight  { font-size: 0.9rem; }

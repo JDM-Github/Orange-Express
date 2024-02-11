@@ -138,7 +138,7 @@
 }
 
 .content .daily-discover .daily-discover-div {
-	position: relative;
+	position   : relative;
 	padding    : 15px;
 	font-size  : 1.1rem;
 	font-weight: bold;
@@ -156,33 +156,33 @@
 /*                            MEDIA EDIT                           */
 /*******************************************************************/
 @media (max-width: 800px) {
-	.content .products .product .product-name { font-size: 0.8rem }
-	.content .products .product .product-price { font-size: 0.9rem }
-	.content .products { height: 185px; }
-	.content .top-product { height : 230px; }
-	.content .products .product { height: 180px; width : 150px; }
-	.content .products .product .product-sales { font-size: 0.8rem; }
-	.content .top-product .top-product-div { font-size: 0.8rem; }
+	.content .products .product .product-name    { font-size: 0.8rem }
+	.content .products .product .product-price   { font-size: 0.9rem }
+	.content .products                           { height: 185px; }
+	.content .top-product                        { height : 230px; }
+	.content .products .product                  { height: 180px; width : 150px; }
+	.content .products .product .product-sales   { font-size: 0.8rem; }
+	.content .top-product .top-product-div       { font-size: 0.8rem; }
 	.content .daily-discover .daily-discover-div { font-size: 0.9rem; }
 }
 
 @media (max-width: 550px) {
-	.content .products .product .product-name { font-size: 0.7rem }
-	.content .products .product .product-price { font-size: 0.7rem }
-	.content .products { height: 155px; }
-	.content .top-product { height : 200px; }
-	.content .products .product { height: 150px; width : 120px; }
-	.content .products .product .product-sales { font-size: 0.7rem; }
-	.content .top-product .top-product-div { font-size: 0.7rem; }
+	.content .products .product .product-name    { font-size: 0.7rem }
+	.content .products .product .product-price   { font-size: 0.7rem }
+	.content .products                           { height: 155px; }
+	.content .top-product                        { height : 200px; }
+	.content .products .product                  { height: 150px; width : 120px; }
+	.content .products .product .product-sales   { font-size: 0.7rem; }
+	.content .top-product .top-product-div       { font-size: 0.7rem; }
 	.content .daily-discover .daily-discover-div { font-size: 0.8rem; }
 }
 
 @media (max-width: 450px) {
-	.content .products { height: 105px; }
-	.content .top-product { height : 150px; }
-	.content .products .product { height: 100px; width : 80px; }
-	.content .products .product .product-sales { font-size: 0.5rem; }
-	.content .top-product .top-product-div { font-size: 0.5rem; }
+	.content .products                           { height: 105px; }
+	.content .top-product                        { height : 150px; }
+	.content .products .product                  { height: 100px; width : 80px; }
+	.content .products .product .product-sales   { font-size: 0.5rem; }
+	.content .top-product .top-product-div       { font-size: 0.5rem; }
 	.content .daily-discover .daily-discover-div { font-size: 0.6rem; }
 }
 /*.................................................................*/

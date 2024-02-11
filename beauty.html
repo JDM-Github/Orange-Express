@@ -6,48 +6,242 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="assets/logo.png">
 	<link rel="stylesheet" href="css/root.css">
-	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/content.css">
-	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/openproduct.css">
 	<title>Orange Express - Beauty</title>
 </head>
 <body>
-	<div class="nav">
-		<a href="index.html"><img class="logo" src="assets/logo.png" alt="SHOPEE"></a>
-		<div class="search-container">
-			<input type="text" class="search" placeholder="Search">
-			<div class="search-button">&#x1F50E;&#xFE0E</div>
-			<a href="cart.html"><div class="search-cart">🛒&#xFE0E</div></a>
-		</div>
-		<a href="login.html"><img class="account" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png"></a>
+	<style type="text/css">
+		div { font-family: 'Arial'; }
+		body {
+			margin: 0; padding: 0;
+			background: linear-gradient(to bottom, #fefefe, #EFCBD0);
+			background-attachment: fixed;
+		}
+		.content {
+			display: none;
+			background-color: transparent;
+			position: absolute;
+			top: 300px;
+			margin-bottom: 0;
+		}
+		.content .daily-discover { background-color: transparent; }
+
+		.login, .cservice {
+			position: absolute;
+			top: 10px; right: 5vw;
+			font-size: 1.5rem;
+			color: #00000066;
+			cursor: pointer;
+		}
+		.cservice {
+			left: 4vw;
+		}
+		.box {
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			margin-top: 10vh;
+			left: 5vw;
+			width: 90vw;
+			height: 25vh;
+			background-color: white;
+			box-shadow: 0 0 10px #00000066 inset;
+		}
+		.box .back-container,
+		.box .text-container,
+		.box .tools-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 30vw;
+			height: 100%;
+			border: 1px solid black;
+			color: black;
+			font-size: 3rem;
+			cursor: pointer;
+		}
+		.box .back-container img, .box .tools-container img { width: 100px; }
+		.nav {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			position: relative;
+			margin-top: 20px;
+			width: 90vw;
+			left: 5vw;
+		}
+		.nav div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.5rem;
+			color: #000000CC;
+			cursor: pointer;
+		}
+		.sales {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #ffffffaa;
+			background-color: black;
+			margin-top: 10px;
+			height: 30px;
+		}
+		.bottom-txt {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			left: 5vw;
+			height: 60vh;
+			width: 30vw;
+			font-size: 1.5rem;
+			transition: 0.2s transform;
+		}
+		.image-bg {
+			position: fixed;
+			bottom: 0;
+			right: 0vw;
+			height: 50vh;
+			width: 50vw;
+			transition: 0.2s transform;
+		}
+		.bottom-btn {
+			position: fixed;
+			top: 80vh;
+			left: calc(5vw + 20vw - 175px);
+			height: 50px;
+			width: 200px;
+			font-size: 1.5rem;
+			font-weight: bolder;
+			border-radius: 20px;
+			border: none; outline: none;
+			color: white;
+			background-color: black;
+			transition: 0.2s transform;
+			cursor: pointer;
+		}
+		.bottom-btn:hover {
+			transform: scale(1.2);
+		}
+	</style>
+	<div class="cservice">Customer Service</div>
+	<div class="login" onclick="window.location.href = 'login.html'">ACCOUNT</div>
+	<div class="box">
+		<div class="back-container" onclick="window.location.href = 'index.html';">
+			<img src="https://cdn-icons-png.flaticon.com/256/93/93634.png"></div>
+		<div class="text-container" onclick="moveBackDisplay();">AESTHICA</div>
+		<div class="tools-container" onclick="window.location.href = 'cart.html'">
+			<img src="https://cdn-icons-png.flaticon.com/512/263/263142.png"></div>
 	</div>
-	<div class="credit" style="margin-top: 120px">
-		<div class="credit-text">
+	<div class="nav">
+		<div id="skincare"  onclick="moveDisplay(allProductData.skincare , '#skincare' );">SKINCARE</div>
+		<div id="makeup"    onclick="moveDisplay(allProductData.makeup   , '#makeup'   );">MAKEUP</div>
+		<div id="fragrance" onclick="moveDisplay(allProductData.fragrance, '#fragrance');">FRAGRANCE</div>
+		<div id="hair"      onclick="moveDisplay(allProductData.hair     , '#hair'     );">HAIR</div>
+		<div id="bodycare"  onclick="moveDisplay(allProductData.bodycare , '#bodycare' );">BODYCARE</div>
+	</div>
+	<div class="sales">Weekend Sale! Get up to 30% off and free shipping</div>
+	<div class="bottom-txt">Discover a collection of radiant beauty essentials that enhance your natural glow</div>
+	<button class="bottom-btn" onclick="moveDisplay(allProductData.skincare, '#skincare');">SHOP NOW!!!</button>
+	<img class="image-bg" src="https://clipart-library.com/image_gallery2/Makeup-Kit-Products-Free-Download-PNG.png">
+	<div class="content">
+		<div class="daily-discover" style="filter: sepia(30%) hue-rotate(290deg);">
+			<div style="margin-top: 10px"></div>
+			<div class="products pdiscover"></div>
+		</div>
+	</div>
 
-			<span class="highlight">Discover the Orange Express Experience!</span>
-			Orange Express is your go-to destination for a vibrant and seamless online shopping journey. Dive into a world of fantastic deals, quick transactions, and trustworthy sellers. As a top mobile-first marketplace, Orange Express caters to users across various regions, bringing joy to shoppers in every corner. Whether you're in the hustle of Brazil, the beauty of Taiwan, or the excitement of Mexico, Orange Express is here for you. List your items, snag incredible deals, and enjoy the thrill of Orange Express shopping!<br><br>
+	<div class="open-product" style="filter: sepia(30%) hue-rotate(290deg);">
+		<div class="background"></div>
+		<div class="main-box">
+			<div class="main-image-bg"></div>
+			<img class="main-image">
+			<div class="main-name"></div>
+			<div class="main-rating"> 5.0
+				<img src="assets/5star.png">
+				<div class="main-rating-div">10K+ Ratings</div>
+				<div class="main-rating-div">5K+ Sold    </div>
+			</div>
+			<div class="main-price-container">
+				<div class="price" style="position: relative; color: var(--main-color); width: 100%;
+					font-size: 2.5rem; font-weight: bold; top: 10px; left: 10px;"></div>
+				<div style="position: relative; color: #00000066; top: 10px; left: 10px;">Lowest Price Guaranteed</div>
+			</div>
+			<div class="main-store-container">
+				<div class="center-text" style="position: relative; color: #00000066; margin-right: 2%; height: 30px;
+					font-size: 1.2rem; font-weight: bold; left: 10px;">Quantity</div>
+				<div class="quantityMaker" style="position: relative; left: 10px;">
+					<button class="quantity-btn" onclick="quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);">-</button>
+  					<input  class="quantity-input" type="text" value="1" readonly>
+  					<button class="quantity-btn" onclick="quantityInput.value = parseInt(quantityInput.value) + 1;">+</button>
+  				</div>
+  				<div class="buy-class center-text" style="right: 10px; width: 15%; background-color: var(--main-color); color: white;">BUY NOW</div>
+				<div class="buy-class center-text" onclick="addCartProduct();" style="right: calc(15% + 20px); width: 20%;
+					background-color: #fefefe; color: var(--main-color); border: 1px solid var(--main-color);">ADD TO CART</div>
 
+			</div>
+			<div class="main-description" style="padding-bottom: 20px;">
+				<div style="position: relative; font-size: 1.5rem; top: 5px; left: 5px; color: #00000066;">Product Description</div>
+				<div style="position: relative; font-size: 1rem  ; top: 5px; left: 5px; color: #00000066;">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+			<div style="position: relative; height: 20px; left: 0; "></div>
 
-			Orange Express takes pride in delivering an outstanding online shopping experience to households worldwide. With exciting campaigns throughout the year, we aim to make your shopping adventure memorable and enjoyable. From exclusive discounts to irresistible vouchers, Orange Express is committed to delighting our loyal fans and welcoming new enthusiasts. Download the Orange Express app now and explore our website for a taste of the Orange Express magic!<br><br><br>
-
-			<span class="highlight">Why Orange Express?</span>
-			At Orange Express, we believe in more than just transactions; we believe in creating moments. Discover a shopping experience that goes beyond the ordinary. Our commitment to providing not just products, but memories, sets us apart. Join the Orange Express family and embark on a journey where each purchase tells a story.<br><br>
-
-			Whether you're in the hustle of Brazil, the beauty of Taiwan, or the excitement of Mexico, Orange Express is here for you. List your items, snag incredible deals, and enjoy the thrill of Orange Express shopping!<br><br>
-
-			Orange Express takes pride in delivering an outstanding online shopping experience to households worldwide. With exciting campaigns throughout the year, we aim to make your shopping adventure memorable and enjoyable. From exclusive discounts to irresistible vouchers, Orange Express is committed to delighting our loyal fans and welcoming new enthusiasts. Download the Orange Express app now and explore our website for a taste of the Orange Express magic!<br><br><br>
-
-			<span class="highlight">Join the Orange Express Community</span>
-			Orange Express is more than just a marketplace; it's a vibrant community. Connect with like-minded shoppers, share your latest finds, and be part of a community that celebrates the joy of shopping. With forums, live events, and exclusive collaborations, Orange Express is where friendships are forged, and memories are made.<br><br><br>
-
-
-			<span class="highlight">Embark on a Shopping Adventure with Orange Express</span>
-			Join Orange Express for a journey to find everything you desire at unbeatable prices. Our social marketplace lets you stay updated with instant, personalized updates from friends and fellow shoppers. Share exciting finds with a simple tap, spreading the joy of great products and deals. Shop worry-free by checking shop ratings and reviews to locate trusted sellers effortlessly. Your safety is our priority, and with the Orange Express Guarantee, your money is protected. If your order doesn't meet expectations, rest easy – Orange Express Guarantee has you covered. Enjoy a carefree shopping experience with Orange Express!<br><br>
-
-			Remember to keep track of your Orange Express Guarantee period, giving you the flexibility to extend it if needed. Whether it's a delayed shipment or a request for a return or refund, Orange Express Guarantee ensures your satisfaction. Shop confidently, knowing that Orange Express Guarantee has got your back!<br><br><br><br>
-			<hr>
+			<img class="main-return" src="https://cdn-icons-png.flaticon.com/512/3964/3964488.png"
+				style="position: fixed; top: 10px; left: 10px; width: 5%; cursor: pointer;">
 		</div>
 	</div>
 </body>
-
+<footer>
+	<script type="text/javascript" src="js/product.js"></script>
+	<script type="text/javascript" src="js/database.js"></script>
+	<script type="text/javascript">
+		const bottomText = document.querySelector(".bottom-txt");
+		const bottomBtn  = document.querySelector(".bottom-btn");
+		const imgBG      = document.querySelector(".image-bg");
+		const content    = document.querySelector(".content");
+		const navContent = document.querySelector(".nav");
+		const textProduct = document.querySelector(".daily-discover-div");
+		function moveBackDisplay() {
+			bottomText.style.transform = "translateX(0%)";
+			bottomBtn .style.transform = "translateX(0%)";
+			imgBG     .style.transform = "translateX(0%)";
+			content   .style.display   = "none";
+			navContent.querySelector("#skincare") .style.color = "#000000CC";
+			navContent.querySelector("#makeup")   .style.color = "#000000CC";
+			navContent.querySelector("#fragrance").style.color = "#000000CC";
+			navContent.querySelector("#hair")     .style.color = "#000000CC";
+			navContent.querySelector("#bodycare") .style.color = "#000000CC";
+		}
+		function moveDisplay(productData, id) {
+			bottomText.style.transform = "translateX(-200%)";
+			bottomBtn .style.transform = "translateX(-200%)";
+			imgBG     .style.transform = "translateX(100%)";
+			content   .style.display   = "inline-block";
+			createProductElements(productData);
+			navContent.querySelector("#skincare") .style.color = "#000000CC";
+			navContent.querySelector("#makeup")   .style.color = "#000000CC";
+			navContent.querySelector("#fragrance").style.color = "#000000CC";
+			navContent.querySelector("#hair")     .style.color = "#000000CC";
+			navContent.querySelector("#bodycare") .style.color = "#000000CC";
+			navContent.querySelector(id).style.color = "#ff77aa";
+		}
+	</script>
+</footer>
 </html>

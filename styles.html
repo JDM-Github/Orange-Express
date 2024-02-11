@@ -10,9 +10,27 @@
 	<link rel="stylesheet" href="css/content.css">
 	<link rel="stylesheet" href="css/nav.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/openproduct.css">
+
 	<title>Orange Express - Express Styles</title>
 </head>
 <body>
+	<style type="text/css">
+		.content {
+			display: none;
+			background-color: transparent;
+			position: absolute;
+			top: 80px;
+			width: 69vw;
+			left: 33vw;
+			filter: sepia(10%) hue-rotate(290deg);
+		}
+		.content .daily-discover {
+			background-color: transparent;
+		}
+	</style>
+
+	<!-- Inline CSS For changing the Filter -->
 	<div class="nav" style="filter: sepia(10%) hue-rotate(290deg);">
 		<a href="index.html"><img class="logo" src="assets/logo.png" alt="SHOPEE"></a>
 		<div class="search-container">
@@ -23,26 +41,85 @@
 		<a href="login.html"><img class="account" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png"></a>
 	</div>
 	<div class="style-background"></div>
-	<div class="model">
+	<div class="model" onclick="hideProducts();">
 		<img src="https://www.jovani.com/image/cache/catalog/short-dresses/22920-ORA1-640x960.jpg">
 		<img style="left: -100%" src="https://us.princesspolly.com/cdn/shop/products/DANIELA-MINI-DRESS-WHITE_e0b99c69-6874-4bdb-8aa2-821d60647a43.jpg?v=1614614522&width=767">
 		<img style="left: -200%" src="https://dynamic.zacdn.com/2KA9j52zUsi1IIKHZjAkAJO7f5s=/filters:quality(70):format(webp)/https://static-ph.zacdn.com/p/trendyol-0489-1791903-1.jpg">
+	</div>
+	<div class="content">
+		<div class="daily-discover">
+			<div class="daily-discover-div">PRODUCT STYLES</div>
+			<div style="margin-top: 10px"></div>
+			<div class="products pdiscover"></div>
+		</div>
+	</div>
+	<div class="open-product" style="filter: sepia(10%) hue-rotate(290deg);">
+		<div class="background"></div>
+		<div class="main-box">
+			<div class="main-image-bg"></div>
+			<img class="main-image">
+			<div class="main-name"></div>
+			<div class="main-rating"> 5.0
+				<img src="assets/5star.png">
+				<div class="main-rating-div">10K+ Ratings</div>
+				<div class="main-rating-div">5K+ Sold    </div>
+			</div>
+			<div class="main-price-container">
+				<div class="price" style="position: relative; color: var(--main-color); width: 100%;
+					font-size: 2.5rem; font-weight: bold; top: 10px; left: 10px;"></div>
+				<div style="position: relative; color: #00000066; top: 10px; left: 10px;">Lowest Price Guaranteed</div>
+			</div>
+			<div class="main-store-container">
+				<div class="center-text" style="position: relative; color: #00000066; margin-right: 2%; height: 30px;
+					font-size: 1.2rem; font-weight: bold; left: 10px;">Quantity</div>
+				<div class="quantityMaker" style="position: relative; left: 10px;">
+					<button class="quantity-btn" onclick="quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);">-</button>
+					<input  class="quantity-input" type="text" value="1" readonly>
+					<button class="quantity-btn" onclick="quantityInput.value = parseInt(quantityInput.value) + 1;">+</button>
+				</div>
+				<div class="buy-class center-text" style="right: 10px; width: 15%; background-color: var(--main-color); color: white;">BUY NOW</div>
+				<div class="buy-class center-text" onclick="addCartProduct();" style="right: calc(15% + 20px); width: 20%;
+					background-color: #fefefe; color: var(--main-color); border: 1px solid var(--main-color);">ADD TO CART</div>
+
+			</div>
+			<div class="main-description" style="padding-bottom: 20px;">
+				<div style="position: relative; font-size: 1.5rem; top: 5px; left: 5px; color: #00000066;">Product Description</div>
+				<div style="position: relative; font-size: 1rem  ; top: 5px; left: 5px; color: #00000066;">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+			<div style="position: relative; height: 20px; left: 0; "></div>
+
+			<img class="main-return" src="https://cdn-icons-png.flaticon.com/512/3964/3964488.png"
+				style="position: fixed; top: 10px; left: 10px; width: 5%; cursor: pointer;">
+		</div>
 	</div>
 	<div class="product-dress">
 		<div class="shop-by-cat">
 			SHOP BY CATEGORIES</div>
 		<div class="shop-product">
-			<div class="shop-cat">
+			<div class="shop-cat" onclick="setStyleProduct(allProductData.tops);">
 				<div class="shop-img"
 					style="background-image: url('https://down-ph.img.susercontent.com/file/2b73d7bc8bd091f8793cc495a5425800_tn');">
 				</div> <div class="shop-text">TOPS</div>
 			</div>
-			<div class="shop-cat">
+			<div class="shop-cat" onclick="setStyleProduct(allProductData.dresses);">
 				<div class="shop-img"
 					style="background-image: url('https://down-ph.img.susercontent.com/file/sg-11134201-22110-crsg6n898mjv59_tn');">
 				</div> <div class="shop-text">DRESSES</div>
 			</div>
-			<div class="shop-cat">
+			<div class="shop-cat" onclick="setStyleProduct(allProductData.bottoms);">
 				<div class="shop-img"
 					style="background-image: url('https://down-ph.img.susercontent.com/file/c5dabd9c56bc87696224d083345535ab_tn');">
 				</div> <div class="shop-text">BOTTOMS</div>
@@ -60,5 +137,22 @@
 		</div>
 	</div>
 </body>
+<footer>
+	<script type="text/javascript" src="js/product.js"></script>
+	<script type="text/javascript" src="js/database.js"></script>
+	<script type="text/javascript">
+		const productDress = document.querySelector(".product-dress");
+		const productContent = document.querySelector(".content");
+		function setStyleProduct(productData) {
+			createProductElements(productData);
+			productDress.style.display = "none";
+			productContent.style.display = "inline-block";
+		}
+		function hideProducts() {
+			productDress.style.display = "inline-block";
+			productContent.style.display = "none";
 
+		}
+	</script>
+</footer>
 </html>

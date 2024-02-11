@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/root.css">
+
+	<title>Orange Express - Snake Game</title>
+</head>
+<body>
+	<style type="text/css">
+		body {
+			background-color: #220000ff;
+			margin: 0; padding: 0;
+		}
+		.back-button {
+			position: absolute;
+			top: 10px; left: 10px;
+			width: 50px; height: 50px;
+			cursor: pointer;
+		}
+		.back-button img {
+			position: absolute;
+			width: 100%;
+		}
+		#score, #speed {
+			position: absolute;
+			left: calc(50vw - 250px);
+			top: calc(50vh - 290px);
+			font-size: 2rem;
+			font-weight: bold;
+			height: 50px;
+			color: var(--main-color);
+			text-shadow: 0 0 5px red;
+		}
+		#speed { left: calc(50vw + 100px); }
+
+		#game-canvas,
+		#game-over {
+			position: absolute;
+			width: 500px; height: 500px;
+			right: calc(50vw - 250px);
+			top: calc(50vh - 250px);
+			background-color: white;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 0 5px black;
+		}
+		#game-over {
+			display: none;
+			background-color: #00000044;
+			box-shadow: none;
+		}
+		#game-over img {
+			position: absolute;
+			left: 50%; top: 50%;
+			width: 30%;
+			transform: translateX(-50%) translateY(-50%);
+			filter: drop-shadow(0 0 10px white);
+		}
+		#snake-head {
+			position: absolute;
+			width: 45px; height: 45px;
+			top: 0; left: 0;
+			border-radius: 10px;
+			transition: 0.35s top, 0.35s left;
+			background: url("https://raw.githubusercontent.com/komeilshahmoradi/Snake/main/Sprites/snake.png") center/100% 100%;
+		}
+		#tailContainer {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%; height: 100%;
+		}
+		.tail { transition: 0.35s top, 0.35s left; }
+		.tail, #snake-food {
+			position: absolute;
+			width: 25px; height: 25px;
+			border-radius: 10px;
+			background-color: #779327;
+			filter: drop-shadow(0 0 3px black);
+		}
+		.tail:nth-child(even) {
+    		background-color: #A1C433;
+		}
+		#snake-food {
+			transition: none;
+			background: url("https://html5.gamedistribution.com/rvvASMiM/40caa9898a864a95a5bbbf4b7d0a8484/images/apple.png") center/100% 100%;
+		}
+	</style>
+	<div class="screen1">
+		<div class="rectangle">
+			<div style="position:absolute; border-right: 90vw solid transparent;
+				border-bottom: 50vh solid #ad332355; bottom: 0"></div>
+			<div style="position:absolute; border-left: 50vw solid transparent;
+				border-top: 70vh solid #ad332355; right: 0"></div>
+		</div>
+	</div>
+	<a class="back-button" href="index.html">
+		<img src="https://www.pngitem.com/pimgs/b/78-780819_back-button-png-red-photoshop-icon-transparent-png.png">
+	</a>
+	<div id="game-canvas">
+		<div id="tailContainer"></div>
+		<div id="snake-head"></div>
+		<div id="snake-food"></div>
+	</div>
+	<div id="score">SCORE: </div>
+	<div id="speed">SPEED: </div>
+	<div id="game-over" onclick="restart();">
+		<img src="https://cdn-icons-png.freepik.com/512/10309/10309159.png">
+	</div>
+
+</body>
+<footer>
+	<script type="text/javascript" src="js/game.js"></script>
+</footer>
+</html>
+
+

@@ -188,6 +188,10 @@
 	font-weight: bold;
 
 	cursor: pointer;
+	transition: 0.2s transform;
+}
+.buy-class:hover {
+	transform: scale(1.1);
 }
 /*.................................................................*/
 

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tech/Devices Products</title>
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/gadgetzone.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        .all-product {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            position: absolute;
+            top: 50px; left: 40px;
+            width: 700px;
+            height: 90vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        .product {
+            position: relative;
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding-top: 20px;
+            margin: 20px;
+            text-align: center;
+            height: 250px;
+            display: inline-block;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out;
+            animation: colorAnimation2 5s infinite;
+        }
+        .product:hover {
+            transform: scale(1.1); /* Scale the product on hover */
+        }
+
+        .product .product-img {
+            position: relative;
+            height: 150px;
+            width: 180px;
+            filter: drop-shadow(0 0 5px #ffffff66);
+        }
+
+        .product h2 {
+            position: relative;
+            height: 20px;
+            font-size: 0.8rem;
+            margin: 10px 0;
+            animation: textAnimation 5s infinite;
+            margin: 5px;
+        }
+
+        .product p {
+            position: relative;
+            height: 20px;
+            font-size: 1.5rem;
+            font-family: 'Vampire';
+            margin: 5px;
+            color: white;
+        }
+
+        /* Style for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            display: flex;
+            background-color: black;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        #modalTitle {
+            position: relative;
+            width: 300px;
+            font-family: 'Vampire';
+            font-size: 1.8rem;
+            color: white;
+        }
+        #modalPrice {
+            position: absolute;
+            width: 160px;
+            margin-top: 100px;
+            margin-left: 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+        #addToBuy, #addToCart {
+            position: absolute;
+            width: 160px;
+            margin-top: 170px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid blue;
+            cursor: pointer;
+            transition: 0.1s border;
+        }
+        #addToCart { margin-top: 250px; }
+        #addToBuy:hover, #addToCart:hover {
+            border: 2px solid #4488ff;
+        }
+
+        #modalContent {
+            position: relative;
+            width: 70%;
+            height: auto;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: #222222;
+        }
+        #modalImage {
+            position: relative;
+            top: 0; right: 0;
+            width: 30%;
+            animation: colorAnimation2 5s infinite;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tech/Devices Products</h1>
+    <div class="all-product">
+        <div class="product" onclick="showProductDetails(this)">
+            <div class="product-img" style="background: url('https://pngimg.com/d/iphone_12_PNG3.png') center/100% 100%"></div>
+            <h2 class="product-name">Apple iPhone 12</h2>
+            <p class="product-price">₱ 9,592.00</p>
+        </div>
+        <div class="product" onclick="showProductDetails(this)">
+            <div class="product-img" style="background: url('https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a145fzkvphl/gallery/ph-galaxy-a14-sm-a145-sm-a145fzkvphl-thumb-535442010') center/100% 100%"></div>
+            <h2 class="product-name">Samsung Galaxy A14 5G</h2>
+            <p class="product-price">₱ 7,142.00</p>
+        </div>
+    </div>
+    <div id="particles"></div>
+    <div class="user-information">
+        <div class="rectangle"></div>
+        <img src="assets/gzone1.png">
+        <img style="width: 200px; right: 20px" src="https://freepngimg.com/thumb/technology/55559-8-gadget-images-free-photo-png-thumb.png">
+        <img style="width: 500px; top: 200px; right: -180px" src="https://purepng.com/public/uploads/large/samsung-phone-270.png">
+        <img style="width: 500px; top: 400px; right: 20px" src="assets/gzone2.png">
+        <div class="gzonetext">GADGET ZONE</div>
+        <a href="index.html" style=" position: absolute; width: 50px; height: 50px; top: 10px; left: 10px;background: url('https://www.outsource-force.com/wp-content/uploads/2013/11/back-button.png') center/100% 100%;"></a>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalPrice"></div>
+            <div id="modalContent"></div>
+            <img id="modalImage">
+
+            <div id="addToBuy">BUY NOW</div>
+            <div id="addToCart">ADD TO CART</div>
+        </div>
+    </div>
+    <script>
+    function showProductDetails(product) {
+        var modal = document.getElementById("myModal");
+        var modalTitle = document.getElementById("modalTitle");
+        var modalPrice = document.getElementById("modalPrice");
+        var modalContent = document.getElementById("modalContent");
+        var modalImage = document.getElementById("modalImage");
+
+        modalTitle.innerHTML = product.querySelector(".product-name").textContent;
+        modalPrice.innerHTML = product.querySelector(".product-price").textContent;
+        modalContent.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+            + "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+            + "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+            + "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse"
+            + "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non"
+            + "proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>"
+            + "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+            + "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+            + "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+            + "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse"
+            + "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non"
+            + "proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+        modalImage.src = product.querySelector(".product-img").style.backgroundImage.replace(/^url\(['"](.+)['"]\)/, '$1');
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</body>
+<footer>
+    <script type="text/javascript" src="js/particle.js"></script>
+</footer>
+
+</html>
